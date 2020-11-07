@@ -29,3 +29,9 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    _instanceof:
+        App\Pack\Domain\Contract\PayementStrategyInterface:
+            tags: ['app.payment_strategy']
+
+    App\Pack\Domain\PaymentHandler:
+        arguments: [!tagged 'app.payment_strategy']

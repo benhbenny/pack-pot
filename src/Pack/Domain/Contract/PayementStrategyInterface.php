@@ -3,6 +3,7 @@
 
 namespace App\Pack\Domain\Contract;
 
+use App\Pack\Domain\Models\PaymentResponse;
 use App\Pack\Domain\ValueObject\Money;
 
 /**
@@ -12,7 +13,13 @@ use App\Pack\Domain\ValueObject\Money;
 interface PayementStrategyInterface
 {
     /**
-     * @return Money
+     * @param Money $money
+     * @return PaymentResponse
      */
-    public function pay(): Money;
+    public function pay(Money $money): PaymentResponse;
+
+    /**
+     * @return string
+     */
+    public function getName(): string;
 }

@@ -25,4 +25,9 @@ interface FundraisingStrategyInterface
      * @return Money
      */
     public function solde() : Money;
+
+    /**
+     * @return string
+     */
+    public function getType(): string;
 }
