@@ -32,6 +32,10 @@ services:
     _instanceof:
         App\Pack\Domain\Contract\PayementStrategyInterface:
             tags: ['app.payment_strategy']
+        App\Pack\Domain\Contract\FundraisingStrategyInterface:
+            tags: ['app.fundraising_strategy']
 
     App\Pack\Domain\PaymentHandler:
         arguments: [!tagged 'app.payment_strategy']
+    App\Pack\Domain\FundraisingHandler:
+        arguments: [!tagged 'app.fundraising_strategy']

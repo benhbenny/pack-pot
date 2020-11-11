@@ -14,6 +14,10 @@ class PaymentHandler implements PaymentHandlerInterface
      */
     private $paymentMode = [];
 
+    /**
+     * PaymentHandler constructor.
+     * @param iterable $paymentMode
+     */
     public function __construct(iterable $paymentMode)
     {
         foreach ($paymentMode as $payment) {
